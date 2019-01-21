@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/logs/logs",
+    "pages/index/zhihu/zhihu",
+    "pages/index/openeye/openeye",
+    "pages/index/girl/girl"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/zhihu/zhihu",
+        "text": "知乎"
+      },
+      {
+        "pagePath": "pages/index/openeye/openeye",
+        "text": "开眼"
+      },
+      {
+        "pagePath": "pages/index/girl/girl",
+        "text": "妹子"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxe5f52902cf4de896"
+  ]
+}
