@@ -1,10 +1,9 @@
 {
   "pages": [
-    "pages/logs/logs",
     "pages/index/zhihu/zhihu",
     "pages/index/openeye/openeye",
-    "pages/index/girl/girl"
-    
+    "pages/index/girl/girl",
+    "pages/demo/demo"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,15 +15,18 @@
     "list": [
       {
         "pagePath": "pages/index/zhihu/zhihu",
-        "text": "知乎"
+        "text": "知乎",
+        "iconPath": "drawable/ic_launcher.png"
       },
       {
         "pagePath": "pages/index/openeye/openeye",
-        "text": "开眼"
+        "text": "开眼",
+        "iconPath": "drawable/ic_launcher.png"
       },
       {
         "pagePath": "pages/index/girl/girl",
-        "text": "妹子"
+        "text": "妹子",
+        "iconPath": "drawable/ic_launcher.png"
       }
     ]
   },
