@@ -1,14 +1,20 @@
 <!--pages/index/zhihu/zhihu.wxml-->
 <view class="container">
   <view class="root">
-    <view class="header">
-      <swiper indicator-dots="true" autoplay="true">
-        <block wx:for="{{topData.top_stories}}" wx:key="*this">
-          <swiper-item>
-            <image src="{{item.image}}" class="banner-img" mode='aspectFill' />
-          </swiper-item>
-        </block>
-      </swiper>
+    <swiper class='header' indicator-dots="true" autoplay="true">
+      <block wx:for="{{topData.top_stories}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item.image}}" class="banner-img" mode='aspectFill' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="list">
+      <block wx:for="{{topData.stories}}" wx:key="*this">
+        <view class='list-item'>
+          <text class='item-title'>{{item.title}}</text>
+          <image src="{{item.images[0]}}" mode='aspectFill' class='item-img'></image>
+        </view>
+      </block>
     </view>
   </view>
 </view>
