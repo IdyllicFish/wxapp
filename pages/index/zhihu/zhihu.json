@@ -1,5 +1,8 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "my-navbar":"/component/navbar"
+  },
   "enablePullDownRefresh":true,
-  "navigationBarTitleText":"知乎日报"
+  "navigationBarTitleText":"知乎日报",
+  "navigationStyle":"custom"
 }

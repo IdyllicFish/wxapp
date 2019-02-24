@@ -1,7 +1,12 @@
 <!--pages/index/zhihu/zhihu.wxml-->
+
 <view class="container">
+  <!-- <view class='title_bar'>
+    <text class='title' style='margin-top:{{statusBarHeight}}px'>{{title}}</text>
+  </view> -->
+  <my-navbar bannerHeight="{{bannerHeight}}" titleBarHeight="{{titleBarHeight}}" statusBarHeight="{{statusBarHeight}}" title="{{title}}" transparency="{{transparency}}"></my-navbar>
   <view class="root">
-    <swiper class='header' indicator-dots="true" autoplay="true">
+    <swiper class='header' indicator-dots="true" autoplay="true" current='{{bannerPosition}}' bindchange='bannerChange'>
       <block wx:for="{{topData.top_stories}}" wx:key="*this">
         <swiper-item>
           <image src="{{item.image}}" class="banner-img" mode='aspectFill' />
@@ -17,4 +22,5 @@
       </block>
     </view>
   </view>
+
 </view>

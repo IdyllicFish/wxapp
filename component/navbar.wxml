@@ -1,0 +1,6 @@
+<!--component/navbar.wxml-->
+<my-navbar>
+  <view class='title_bar' style='opacity:{{transparency}}'>
+    <text class='title' style='margin-top:{{statusBarHeight}}px'>{{title}}</text>
+  </view>
+</my-navbar>

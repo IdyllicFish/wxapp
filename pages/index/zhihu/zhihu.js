@@ -7,17 +7,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    topData: null
+    statusBarHeight: app.globalData.statusBarHeight, //状态栏高度
+    bannerPosition: 0,
+    title: '知乎日报',
+    topData: null,
+    transparency: 0, //导航栏透明度
+    bannerHeight: 0, //轮播图高度
+    titleBarHeight: app.globalData.titleBarHeight, //titlebar高度
+    rpxToPx:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.getBannerHeight();
     this.getNewDatas();
     wx.showLoading({
       title: 'Loading...',
-    })
+    });
   },
 
   /**
@@ -68,7 +76,7 @@ Page({
   onShareAppMessage: function() {
 
   },
-  
+
   /**
    * 请求首页最新消息
    */
@@ -91,6 +99,37 @@ Page({
           title: '加载失败',
         })
       }
+    });
+  },
+
+  /**
+   * banner切换回调
+   */
+  bannerChange(e) {
+    var self = this;
+    console.log(e.detail.current);
+  },
+
+  /**
+   * 滚动的高度回调 
+   */
+  onPageScroll: function(event) {
+    var self = this;
+    var height = (self.data.bannerHeight - self.data.statusBarHeight - self.data.titleBarHeight)
+    var height = (500)
+    var scrollTop = event.scrollTop;
+    self.setData({
+      transparency: scrollTop * self.data.rpxToPx / height
+    })
+  },
+
+
+  getBannerHeight: function() {
+    var self = this;
+    
+    self.setData({
+      bannerHeight: 600 * 750 / wx.getSystemInfoSync().windowWidth,
+      rpxToPx: 750 / wx.getSystemInfoSync().windowWidth
     })
   }
 })
